@@ -161,7 +161,8 @@ namespace Sitecore.Support.XA.Feature.Composites.EventHandlers
 
         protected virtual Item ResolveCompositeDatasource(string datasource, Item contextItem)
         {
-            if (ID.TryParse(datasource, out ID result))
+            ID result;
+            if (ID.TryParse(datasource, out result))
             {
                 return Context.Database.Items[result];
             }
